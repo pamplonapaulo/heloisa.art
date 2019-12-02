@@ -1,0 +1,134 @@
+@mixin animation ($animations) {
+    -webkit-animation: $animations;
+    -moz-animation: $animations;
+    -ms-animation: $animations;
+    -o-animation: $animations;
+    animation: $animations;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin column-count ($count) {
+    -webkit-column-count: $count;
+    -moz-column-count: $count;
+    -ms-column-count: $count;
+    -o-column-count: $count;
+    column-count: $count;
+}
+
+@mixin column-gap ($gap) {
+    -webkit-column-gap: $gap;
+    -moz-column-gap: $gap;
+    -ms-column-gap: $gap;
+    -o-column-gap: $gap;
+    column-gap: $gap;
+}
+
+
+@mixin box-shadow ($shadows) {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    -ms-box-shadow: $shadows;
+    -o-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
+@mixin transform ($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    -o-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transform-origin ($transforms-origin) {
+    -webkit-transform-origin: $transforms-origin;
+    -moz-transform-origin: $transforms-origin;
+    -ms-transform-origin: $transforms-origin;
+    -o-transform-origin: $transforms-origin;
+    transform-origin: $transforms-origin;
+}
+@mixin transition ($transitions) {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    -ms-transition: $transitions;
+    -o-transition: $transitions;
+    transition: $transitions;
+}
+
+@mixin transition-single-property($prop) {
+    -webkit-transition-property: $prop;
+    -moz-transition-property: $prop;
+    -ms-transition-property: $prop;
+    -o-transition-property: $prop;
+    transition-property: $prop;
+}
+
+@mixin transition-2-properties($prop1, $prop2) {
+    -webkit-transition-property: $prop1, $prop2;
+    -moz-transition-property: $prop1, $prop2;
+    -ms-transition-property: $prop1, $prop2;
+    -o-transition-property: $prop1, $prop2;
+    transition-property: $prop1, $prop2;
+}
+
+@mixin transition-3-properties($prop1, $prop2, $prop3) {
+    -webkit-transition-property: $prop1, $prop2, $prop3;
+    -moz-transition-property: $prop1, $prop2, $prop3;
+    -ms-transition-property: $prop1, $prop2, $prop3;
+    -o-transition-property: $prop1, $prop2, $prop3;
+    transition-property: $prop1, $prop2, $prop3;
+}
+
+@mixin transition-duration ($transition-duration) {
+    -webkit-transition-duration: $transition-duration;
+    -moz-transition-duration: $transition-duration;
+    -ms-transition-duration: $transition-duration;
+    -o-transition-duration: $transition-duration;
+    transition-duration: $transition-duration;
+}
+
+@mixin transition-delay ($transitions-delay) {
+    -webkit-transition-delay: $transitions-delay;
+    -moz-transition-delay: $transitions-delay;
+    -ms-transition-delay: $transitions-delay;
+    -o-transition-delay: $transitions-delay;
+    transition-delay: $transitions-delay;
+}
+
+@mixin perspective ($perspectives) {
+    -webkit-perspective: $perspectives;
+    -moz-perspective: $perspectives;
+    -ms-perspective: $perspectives;    
+    perspective: $perspectives;
+}
+
+@mixin perspective-origin ($perspectives-origin) {
+    -webkit-perspective-origin: $perspectives-origin;
+    -moz-perspective-origin: $perspectives-origin;
+    -ms-perspective-origin: $perspectives-origin;    
+    perspective-origin: $perspectives-origin;
+}
+
+
+@mixin backface-visibility ($backface) {
+    -webkit-backface-visibility: $backface;
+    -moz-backface-visibility: $backface;
+    -ms-backface-visibility: $backface;
+    -o-backface-visibility: $backface;
+    backface-visibility: $backface;
+}
+

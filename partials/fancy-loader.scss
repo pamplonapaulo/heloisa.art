@@ -1,0 +1,102 @@
+
+//////////////
+// CREDITS: //
+//////////////
+
+// @elrumordelaluz - Provided scaling fix/improvement
+// @faddee - Provided fix for Edge support
+
+// https://codepen.io/jczimm/pen/vEBpoL
+
+$green: #04CA77;
+$blue: #1D99D8;
+$red: #EE483D;
+$yellow: #F4C342;
+$white: #fff;
+
+// scaling... any units
+$width: 100px;
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: $width;
+  display: table-cell;
+  vertical-align: middle;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 1s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  100%,
+  0% {
+    stroke: $red;
+  }
+  40% {
+    stroke: $blue;
+  }
+  66% {
+    stroke: $green;
+  }
+  80%,
+  90% {
+    stroke: $yellow;
+  }
+}
+
+.loader-wrapper {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+
+  margin: 0 auto;
+  display: table;
+  height: 100%;
+}

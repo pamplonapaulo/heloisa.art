@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.heloisa\.art$
+RewriteRule ^/?$ "https\:\/\/heloisa\.art\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^174\.138\.33\.228
+RewriteRule (.*) https://heloisa.art/$1 [R=301,L]
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+RewriteRule .* ? [F,L]

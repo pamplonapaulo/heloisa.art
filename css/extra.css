@@ -1,0 +1,413 @@
+/*
+* Heloisa Beatriz Watercolor & Stuff
+* Copyright 2019
+* Author: Paulo da Silva Pamplona
+* www.paulopamplona.com
+* Version 1.0
+* Last Update: 09/19/2019
+*/
+html {
+  height: 100%; }
+  @media only screen and (min-width: 1024px) {
+    html {
+      height: unset; } }
+  html body {
+    font-family: "Thasadith", sans-serif; }
+    @media only screen and (min-width: 1024px) {
+      html body .container {
+        min-height: calc(100vh - 250px - 80px);
+        height: unset; } }
+    html body .container main {
+      letter-spacing: 1.4px;
+      height: 100%;
+      padding-top: 80px; }
+      html body .container main h1 {
+        margin: 30px auto;
+        max-width: 600px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "Thasadith", sans-serif; }
+        @media only screen and (min-width: 1024px) {
+          html body .container main h1 {
+            font-size: 2rem;
+            letter-spacing: 1.4px; } }
+      html body .container main h2 {
+        text-align: center;
+        margin-bottom: 3rem; }
+        @media only screen and (min-width: 1024px) {
+          html body .container main h2 {
+            font-size: 1rem; } }
+      html body .container main .controls {
+        height: 200px;
+        text-align: center; }
+        html body .container main .controls a {
+          width: 200px;
+          font-size: 13px;
+          height: 30px;
+          line-height: 30px;
+          background: #bababa;
+          color: white;
+          cursor: pointer;
+          transition: .3s background ease;
+          outline: none;
+          text-decoration: none;
+          display: block;
+          margin: 1rem auto;
+          text-transform: uppercase; }
+          html body .container main .controls a:hover {
+            background: rgba(0, 0, 0, 0.8); }
+      html body .container main .sucesso {
+        height: 200px;
+        text-align: center; }
+      html body .container main form.default {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 0 105px 0;
+        height: 200px;
+        height: unset; }
+      html body .container main form button.directions {
+        letter-spacing: 1.4px;
+        user-select: none;
+        white-space: pre;
+        font-size: 13px;
+        height: 30px;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        line-height: 30px;
+        text-transform: uppercase;
+        padding: 0 1rem;
+        font-family: "Thasadith", sans-serif;
+        background-image: linear-gradient(45deg, #25523B, #358856, #5AAB61, #62BD69, #30694B, #0C3823);
+        background-size: 400%;
+        transition: .3s background ease;
+        animation: bg-alive 11s infinite; }
+        html body .container main form button.directions.inactive {
+          background-image: linear-gradient(45deg, #a70000, #ff0000, #ff5252, #ff7b7b, #ffbaba); }
+          html body .container main form button.directions.inactive:hover {
+            background: rgba(0, 0, 0, 0.8); }
+      html body .container main form .advice {
+        margin-top: 2rem;
+        position: relative;
+        overflow: auto;
+        max-height: 380px;
+        transition: .4s all ease-in; }
+        html body .container main form .advice h6 {
+          margin: .5rem 0;
+          line-height: 1.5;
+          text-align: justify; }
+          html body .container main form .advice h6 span {
+            font-weight: 800;
+            text-shadow: 0px 0px 1px black; }
+          html body .container main form .advice h6 a {
+            font-weight: 800;
+            text-shadow: 0px 0px 1px blue; }
+        html body .container main form .advice.inactive {
+          max-height: 0; }
+        html body .container main form .advice::-webkit-scrollbar {
+          width: 0px; }
+        html body .container main form .advice::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 1px transparent; }
+        html body .container main form .advice::-webkit-scrollbar-thumb {
+          background-color: transparent;
+          outline: 1px solid transparent; }
+      @media only screen and (min-width: 1024px) {
+        html body .container main form {
+          padding: 25px 0 105px 0;
+          text-align: center;
+          height: unset; } }
+      html body .container main form fieldset {
+        min-height: 200px;
+        width: 300px;
+        margin: 2rem auto 0; }
+      html body .container main form input {
+        font-family: "Thasadith", sans-serif;
+        font-size: 13px;
+        letter-spacing: 1.4px; }
+        html body .container main form input.inputFiled {
+          width: calc(100% - 22px);
+          height: 30px;
+          margin-bottom: 2rem;
+          outline-color: black;
+          outline-width: 0px;
+          border: 1px #ccc solid;
+          padding: 0 10px;
+          background: rgba(100, 100, 100, 0.1);
+          letter-spacing: 1.4px; }
+        html body .container main form input::-webkit-input-placeholder {
+          font-size: 13px; }
+        html body .container main form input:focus {
+          background: rgba(100, 100, 100, 0.2);
+          border: 1px black solid; }
+          html body .container main form input:focus::-webkit-input-placeholder {
+            color: transparent; }
+        html body .container main form input[type="number"] {
+          -moz-appearance: textfield; }
+          html body .container main form input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0; }
+          html body .container main form input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0; }
+        html body .container main form input[type="file"] {
+          letter-spacing: 1.4px;
+          margin-bottom: 1rem;
+          width: 100%; }
+          html body .container main form input[type="file"]::-webkit-file-upload-button {
+            width: 0;
+            padding: 0;
+            border-width: 0;
+            outline: none; }
+          html body .container main form input[type="file"]:focus {
+            outline: none;
+            border: none;
+            background: transparent; }
+          html body .container main form input[type="file"]::before {
+            display: none; }
+          html body .container main form input[type="file"].add-img-btn::before {
+            content: 'Select image'; }
+          html body .container main form input[type="file"].add-thumb-btn::before {
+            content: 'Select thumbnail'; }
+        html body .container main form input[type="submit"] {
+          text-transform: uppercase;
+          width: 100px;
+          font-size: 13px;
+          height: 30px;
+          background: #bababa;
+          color: white;
+          cursor: pointer;
+          transition: .3s background ease;
+          outline: none;
+          letter-spacing: 1.4px; }
+          html body .container main form input[type="submit"]:hover {
+            background: rgba(0, 0, 0, 0.8); }
+      html body .container main form .input-file-label {
+        user-select: none;
+        white-space: pre;
+        align-items: flex-start;
+        text-align: center;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #d8d8d8 #d1d1d1 #bababa;
+        border-image: initial;
+        font-size: 13px;
+        height: 30px;
+        background: #bababa;
+        color: white;
+        cursor: pointer;
+        transition: .3s background ease;
+        outline: none;
+        line-height: 30px;
+        margin-bottom: 0;
+        width: calc(100% - 2px);
+        text-transform: uppercase;
+        padding: 0; }
+        html body .container main form .input-file-label:hover {
+          background: rgba(0, 0, 0, 0.8); }
+        html body .container main form .input-file-label.img-file {
+          float: left; }
+        html body .container main form .input-file-label.thumb-file {
+          float: right; }
+      html body .container main form .wrapper-outer {
+        width: 100%;
+        height: 65px;
+        display: table; }
+        html body .container main form .wrapper-outer .wrapper-inner {
+          display: table-cell;
+          vertical-align: middle; }
+          html body .container main form .wrapper-outer .wrapper-inner p {
+            font-size: 13px;
+            letter-spacing: 1.4px; }
+          html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"]:not(:checked), html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"]:checked {
+            position: absolute;
+            left: -9999px;
+            opacity: 0; }
+          html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"] + label {
+            position: relative;
+            padding-left: 25px;
+            height: 25px;
+            line-height: 25px;
+            font-size: 13px;
+            letter-spacing: 1.4px;
+            color: #757575;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -ms-user-select: none;
+            float: left; }
+          html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"] + label:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            z-index: 0;
+            border: 1px solid #ccc;
+            margin-top: 2px;
+            cursor: pointer; }
+          html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"]:not(:checked):disabled + label:before {
+            border: none;
+            background-color: rgba(0, 0, 0, 0.26); }
+          html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"].tabbed:focus + label:after {
+            transform: scale(1);
+            border: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.4); }
+          html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"]:checked + label:before {
+            top: -4px;
+            left: -5px;
+            width: 6px;
+            height: 17px;
+            border-top: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            transform: rotate(50deg);
+            backface-visibility: hidden;
+            transform-origin: 100% 100%; }
+          html body .container main form .wrapper-outer .wrapper-inner [type="checkbox"]:checked:disabled + label:before {
+            border-right: 3px solid rgba(0, 0, 0, 0.26);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.26); }
+          html body .container main form .wrapper-outer .wrapper-inner a {
+            cursor: pointer;
+            color: #757575; }
+            html body .container main form .wrapper-outer .wrapper-inner a:hover {
+              color: blue; }
+            html body .container main form .wrapper-outer .wrapper-inner a p {
+              float: none; }
+      html body .container main form .wrapper:nth-of-type(2) {
+        text-align: center; }
+      @media only screen and (min-width: 768px) {
+        html body .container main {
+          height: 400px;
+          margin-top: 150px; } }
+      @media only screen and (min-width: 1024px) {
+        html body .container main {
+          height: 100%;
+          margin-top: 0; } }
+      html body .container main table {
+        width: 100%;
+        text-align: center; }
+        html body .container main table th {
+          font-weight: 800;
+          text-shadow: 0px 0px 1px black;
+          text-align: left; }
+          html body .container main table th br {
+            content: "";
+            display: block;
+            margin-top: -20px; }
+        html body .container main table a {
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.3);
+          transition: .2s color; }
+          html body .container main table a i.material-icons {
+            vertical-align: middle;
+            transition: .2s transform; }
+          html body .container main table a:hover {
+            color: black; }
+            html body .container main table a:hover i {
+              transform: scale(1.2); }
+        html body .container main table tr {
+          height: 1.5rem;
+          line-height: 1.5rem;
+          display: table-row;
+          height: 2.5rem;
+          line-height: 2.5rem;
+          transition: .2s all; }
+          html body .container main table tr td {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 4px; }
+            html body .container main table tr td p {
+              height: 1.5rem;
+              line-height: 1.5rem;
+              font-size: 12px;
+              display: table-cell;
+              text-align: left; }
+            html body .container main table tr td:nth-of-type(1) {
+              padding: 10px 0; }
+              html body .container main table tr td:nth-of-type(1) img {
+                max-height: 50px;
+                display: table;
+                margin: 0 auto;
+                transition: .2s all; }
+            html body .container main table tr td:nth-of-type(4) p {
+              font-size: 12px; }
+            html body .container main table tr td:nth-of-type(5) p {
+              font-size: 12px; }
+          html body .container main table tr.edition {
+            background: rgba(220, 220, 220, 0.2); }
+            html body .container main table tr.edition td input {
+              font-size: 100%; }
+              html body .container main table tr.edition td input[type="number"] {
+                width: 50px;
+                text-align: center; }
+            html body .container main table tr.edition td:nth-of-type(1) {
+              background: #ffff; }
+            html body .container main table tr.edition td:nth-of-type(4) input {
+              font-size: 12px; }
+            html body .container main table tr.edition td:nth-of-type(5) input {
+              font-size: 12px; }
+            html body .container main table tr.edition td:nth-of-type(9) {
+              background: #ffff; }
+            html body .container main table tr.edition:hover {
+              box-shadow: none; }
+          html body .container main table tr:nth-of-type(odd) {
+            background: rgba(220, 220, 220, 0.2); }
+          html body .container main table tr:nth-of-type(1) {
+            background: none;
+            height: 2.5rem;
+            line-height: 2.5rem; }
+          html body .container main table tr:hover {
+            box-shadow: inset 0px 0px 3px black; }
+            html body .container main table tr:hover:nth-of-type(1) {
+              box-shadow: none; }
+            html body .container main table tr:hover img.ux-help {
+              transform: scale(3);
+              box-shadow: 0 0 10px; }
+    html body footer {
+      height: 165px;
+      position: absolute; }
+      @media only screen and (min-width: 1024px) {
+        html body footer {
+          height: 250px; } }
+      html body footer .container-footer .web-developer h6 {
+        margin-bottom: 20px;
+        margin-top: 25px; }
+        @media only screen and (min-width: 1024px) {
+          html body footer .container-footer .web-developer h6 {
+            margin-bottom: 30px;
+            margin-top: 35px; } }
+      html body footer .container-footer .web-developer a img {
+        width: 50px; }
+        @media only screen and (min-width: 1024px) {
+          html body footer .container-footer .web-developer a img {
+            width: 70px; } }
+      @media only screen and (min-width: 1024px) {
+        html body footer .container-footer {
+          margin-top: calc((260px - 135px) / 2); } }
+
+@keyframes bg-alive {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+html body {
+  display: flex;
+  flex-direction: column; }
+
+html body header {
+  position: relative; }
+
+html body .container main {
+  padding: 0;
+  margin-bottom: 3rem; }
+
+html body footer {
+  position: relative; }
+
+/*# sourceMappingURL=extra.css.map */

@@ -1,0 +1,568 @@
+/*
+* Heloisa Beatriz Watercolor & Stuff
+* Copyright 2019
+* Author: Paulo da Silva Pamplona (https://www.paulopamplona.com)
+* Version 1.0
+* Last Update: 11/29/2019
+*
+* SINGLE ART PAGE *
+*
+*/
+
+
+@import '../partials/variables';
+@import '../partials/mixins';
+@import '../partials/layout';
+@import '../partials/fancy-loader';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900|Thasadith');
+
+    
+    html {
+
+        height: 100%;
+        
+        body {
+
+            height: 100%;
+
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
+
+            &::-webkit-scrollbar-track {
+                @include box-shadow(inset 0 0 1px transparent);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: transparent;
+                outline: 1px solid transparent;
+            }
+            
+            overflow-x: hidden;
+
+            .container {
+                position: relative;
+                
+                //height: 100vh;
+                //height: 80vh;
+                //height: 100vh;
+
+                height: 100%;
+                width: 100%;
+                margin: 0 auto;
+                overflow: hidden;
+
+                //height: auto;
+                //min-height: 100vh;
+                //min-height: -webkit-fill-available;
+
+                @include MQ(L){
+                    height: 100vh;
+                }
+
+                main {
+                    position: relative;
+                    float: left;
+                    width: 100vw;
+                    height: 100%;
+                    //height: auto;
+                    //min-height: -webkit-fill-available;
+                    //height: 80vh;
+
+                    max-width: unset;
+                    top: 0;
+                    padding: 0;
+                    @include box-shadow(0 0 0 5px rgba(0,255,0,0) inset);
+
+                    overflow: hidden;
+
+                    @include MQ(L){
+                        height: 100vh;
+                    }
+
+                    #overlay {
+                        width: 100vw;
+                        height: 100vh;
+                        position: fixed;
+                        top:0;
+                        left:0;
+                        background-color: rgb(0,0,0);
+                        z-index: 900;
+
+                        @include MQ(L){
+                            width: 100%;
+                            height: 100%;
+                        }
+                        
+                        // .main-loader {
+                            
+                        //     border: 6px solid #f3f3f3;
+                        //     border-radius: 50%;
+                        //     border-top: 6px solid #3498db;
+                        //     width: 30px;
+                        //     height: 30px;
+                        //     @include animation(spin 1.5s linear infinite);
+
+                        //     position: absolute;
+                        //     margin-left: calc(50% - 18px);
+                        //     top: calc(50% - 18px);
+                        // }
+                    }
+
+                    article[id^="galleryItemContent"] {
+                        position: fixed;
+                        //position: relative;
+
+
+                        top:0;
+                        z-index: 901;
+                        //max-width: 1200px;
+                        overflow: visible;
+                        
+                        .comments-wrapper {
+                            
+                            position: absolute;
+                            background: white;
+                            border-radius: 3px;
+                            box-shadow: 2px 2px 1px lightslategrey;
+                            border: 1px lightslategrey solid;                            
+                            
+                            @include transition(.5s all);
+                            top: 200vh;
+                            
+                            &.visible {
+                                
+                                top: 50%;
+                                @include transform(translateY(-50%));
+                            }
+                            
+                            .quitComment {
+                                z-index: 999;
+                                position: absolute;
+                                outline: none;
+                                cursor: pointer;
+                                background: #ccc;
+                                width: 50px;
+                                height: 50px;
+                                color: white;
+                                border-radius: 50%;
+                                top: 0;
+                                left: 50%;
+                                border-color: #ccc;
+                                box-shadow: 2px 2px 13px black;
+                                
+                                @include transform(translate(-50%,-50%));
+                                @include transition(.2s all);
+                                
+
+                                
+                                i.material-icons {
+                                    color: black;
+                                    font-size: 2.2rem;
+                                    margin-top: 2px;
+
+                                }
+                                
+                                &:hover {
+                                    @include transform(translate(-50%,-50%) scale(1.2));
+                                }
+                            }
+                        }
+                        
+                        .btns-wrapper {
+                            position: fixed;
+                            display: none;
+                            opacity: 1;
+                            z-index: 999;
+                            top: 0;
+                            
+
+                            button {
+                                width: 66px;
+                                height: 66px;
+                                cursor: pointer;
+                                position: absolute;
+                                text-decoration: none;
+                                z-index: 902;
+                                outline: none;
+                                background-color: rgba(0,0,0,.4);
+                                border: 1px solid transparent;
+                                @include box-shadow(.5px .5px 9px .5px black);                                
+                                @include transition(.2s);
+                                @include transition-3-properties(background-color, border, transform);
+                                
+
+                                span {
+                                    position: absolute;
+                                    display: block;
+                                    content: "";
+                                    width: 60%;
+                                    height: 1.5px;
+                                    background: #ccc;
+                                    @include transition(.2s);
+                                    @include transition-single-property(background);
+                                }
+
+                                &.close {
+                                    
+                                    border-radius: 0 0 0 50%;
+                                    
+                                    @include MQ(L) {
+                                        border-radius: 50%;
+                                    }
+                                    
+                                    span {
+                                        margin-left: 6px;
+
+                                        &:nth-child(1){
+                                            height: 2px;
+                                            margin-top: -1px;
+                                            @include transform(rotate(45deg));
+                                        }
+
+                                        &:nth-child(2){
+                                            top: 48%;
+                                            @include transform(rotate(-45deg));
+                                        }
+                                    }
+
+                                    &:hover {
+                                        
+                                        @include MQ(L) {
+                                            @include transform(rotate(90deg));
+                                            transform-origin: center;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            &.visible {
+                                
+                                display: block;
+                                
+                                button {
+                                    
+                                    &.close {
+                                        
+                                        span {
+                                            
+                                            @include animation(blinpShadow 4s 0.3s 2);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .figure-wrapper-outer {
+                            position: relative;
+                            display: flex;
+                            text-align: center;
+                            transition: transform 0.6s;
+                            
+                            .figure-wrapper-inner {
+                                position: relative;
+                                
+                                figure {
+                                    width: 100%;
+                                    margin-bottom: 0;                                    
+
+                                    img {
+                                        //max-width: 1200px;
+                                        height: unset;                                        
+                                        width: calc(100vw - 30px);
+                                        margin-left: 0;
+                                        opacity: 1;
+                                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                                        @include transition(.1s);
+                                        
+                                        &.hidden {
+                                            opacity: 0;
+                                            
+                                            @include MQ(L) {
+                                                opacity: 1;
+                                            }
+                                        }
+                                        
+                                        @include MQ(LL) {
+                                            //max-width: calc(1200px - 30px - 5vw);
+                                        }
+                                    }
+
+                                    figcaption {
+                                        color: white;
+                                        margin: 1.5em;
+                                        margin-bottom: 0;
+                                        font-weight: 600;
+                                        letter-spacing: 1px;
+                                        padding-bottom: 1em;
+                                        font-family: $font-1;
+                                        text-transform: uppercase;
+                                        text-align: center;
+                                        display: none;
+                                    }
+                                }
+                                
+                                .fb_iframe_widget {
+                                    @include transform(translateY(-150%));
+
+                                    &.ui.facebook.button {
+
+                                        i.material-icons {
+                                            pointer-events: none;
+                                        }
+
+                                        span {
+
+                                            width: 100%!important;
+                                            height: 100%!important;
+                                            position: absolute;
+                                            transform: translate(-25%, -25%);
+
+                                            iframe {
+
+                                                width: 100%!important;
+                                                height: 100%!important;
+                                                position: absolute;
+                                                opacity: 0;
+
+                                                a._2vmz {
+                                                    position: absolute;
+                                                    height: 200px;
+                                                    width: 200px;
+                                                    top: 0;
+                                                    right: 0;
+                                                    z-index: 99999;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }                                
+                            }
+                        }
+
+                        a.btn-swiper {
+                            display: none;
+                            text-decoration: none;
+                            opacity: 0.5;
+                            @include transition(.2s opacity);
+
+                            &.visible {
+                                display: block;
+                            }
+
+                            pointer-events: none;
+
+                            @include MQ(L){
+
+                                pointer-events: auto;
+                                
+                                &:hover {
+                                    opacity: 1;
+    
+                                    span {
+                                        box-shadow: inset 2px -2px 0px rgba(199,234, 70,.8);
+                                        border-color: rgba(4,196,125,.8);
+                                    }
+                                }
+                            }                            
+
+                            span {
+                                position: fixed;
+                                display: block;
+                                width: 30px;
+                                height: 30px;
+                                z-index: 9999; 
+                                border-color: rgba(0,0,0,.9);
+                                border-style: solid;
+                                @include transform(translateY(-50%) rotate(45deg));
+                                top: 50vh;
+                                animation-name: artsNav;
+                                animation-duration: 1.5s;
+                                animation-timing-function: linear;
+                                animation-iteration-count: 4;
+                                opacity: 0;
+
+                                @include MQ(L){
+                                    opacity: 0.5;
+                                    animation-iteration-count: infinite;
+                                    border-color: rgba(0,0,0,.4); 
+                                }
+                            }
+
+                            &.btn-prev{
+
+                                span {
+                                    border-width: 0 0 2px 2px;
+                                    box-shadow: inset 2px -2px 0px rgba(255,255,255,.4);
+    
+                                    &:nth-child(1) { left: 30px; animation-delay: 0; }
+    
+                                    &:nth-child(2) { left: 45px; animation-delay: .15s; }
+    
+                                    &:nth-child(3) { left: 60px; animation-delay: .3s; }
+    
+                                    &:nth-child(4) { left: 75px; animation-delay: .45s; }
+    
+                                    &:nth-child(5) { left: 90px; animation-delay: .6s; }
+    
+                                    &:nth-child(6) { left: 105px; animation-delay: .75s; }
+    
+                                    &:nth-child(7) { left: 120px; animation-delay: .9s; }
+    
+                                    &:nth-child(8) { left: 135px; animation-delay: 1.05s; }
+
+                                }
+                            }
+
+                            &.btn-next{
+
+                                span {
+                                    border-width: 2px 2px 0px 0;
+                                    box-shadow: inset -2px 2px 0px rgba(255,255,255,.4);
+    
+                                    &:nth-child(1) { right: 30px; animation-delay: 0; }
+    
+                                    &:nth-child(2) { right: 45px; animation-delay: .15s; }
+    
+                                    &:nth-child(3) { right: 60px; animation-delay: .3s; }
+    
+                                    &:nth-child(4) { right: 75px; animation-delay: .45s; }
+    
+                                    &:nth-child(5) { right: 90px; animation-delay: .6s; }
+    
+                                    &:nth-child(6) { right: 105px; animation-delay: .75s; }
+    
+                                    &:nth-child(7) { right: 120px; animation-delay: .9s; }
+    
+                                    &:nth-child(8) { right: 135px; animation-delay: 1.05s; }
+    
+                                }
+                            }
+                        }
+                    }
+                }
+
+                button.fb-btn {
+                    outline: none;
+                    //position: absolute;
+                    position: relative;
+                    //position: fixed;
+                    cursor: pointer;
+                    color: white;
+                    background: #4167B2;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    @include box-shadow(1px 1px 5px black);
+
+                    //@include transform(translate(-50%, -125%) scale(.8));
+                    //@include transform(translate(0, 0) scale(.8));
+                    @include transform(translate(0, -100%) scale(.8));
+
+                    bottom: 0;
+                    //bottom: -100vh;
+
+                    letter-spacing: 1.2px;
+                    height: 60px;
+                    width: 60px;
+                    z-index: 999;
+
+                    //display: none;
+                    
+                    @include transition(.5s all);
+
+                    @include MQ(L) {
+                        bottom: 0;
+                    }
+
+                    i.material-icons {
+                        font-size: 30px;
+                    }
+                    
+                    &.share-btn {
+                        //@include transform(translate(-70vw, -10%) scale(0.8));
+                        //left: -50vw;
+                        left: 0;
+                        opacity: 0;
+                        float: left;
+
+                        &.visible {
+                            //@include transform(translate(-100%, -10%) scale(.8));
+                            left: calc(50vw - 60px);
+                            opacity: 1;
+                        }
+                        
+                        @include MQ(L) {
+                            
+                            &:hover {
+                                @include transform(translate(0, -100%) scale(.85));
+                            }
+                        }
+                    }
+                    
+                    &.comment-btn {
+                        //@include transform(translate(70vw, -10%) scale(.8));
+                        //@include transform(translate(0, 0) scale(.8));
+                        //right: -50vw;
+                        right: 0;
+                        opacity: 0;
+                        float: right;
+
+
+                        &.visible {
+                            //@include transform(translate(0%, -10%) scale(.8));
+                            right: calc(50vw - 60px);
+                            opacity: 1;
+                        }
+
+                        @include MQ(L) {
+                            
+                            &:hover {
+                                @include transform(translate(0, -100%) scale(.85));
+                            }
+                        }
+                        
+                        &.active {
+                            background: black;
+                            color: white;
+                        }
+                    }
+                    
+                    @include MQ(L) {
+                        
+                        &:hover {
+
+                            color: black;
+                            background: white;
+                            border-color: black;
+
+                        }
+                    }
+                }
+            }
+        }    
+    }
+
+    @include keyframes(artsNav) {
+        0%   {opacity: 0;}
+        5%   {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    @include keyframes(blinpShadow) {
+      0%, 30%, 36%, 63%, 69%, 100% {
+        @include box-shadow(none);
+      }
+      33%, 66% {
+        @include box-shadow(0px 0px 5px 5px white);
+      }
+    }
+
+    @include keyframes(spin) {
+      0% {
+        @include transform(rotate(0deg));
+      }
+      100% {
+        @include transform(rotate(360deg));
+      }
+    }

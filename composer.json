@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "files": ["source/Support/Config.php", "source/Support/Helpers.php"]
+    },
+
+    "require": {
+        "mailgun/mailgun-php": "^3.0",
+        "kriswallsmith/buzz": "^1.0",
+        "nyholm/psr7": "^1.2"
+    }
+}

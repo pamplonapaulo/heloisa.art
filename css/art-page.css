@@ -1,0 +1,636 @@
+/*
+* Heloisa Beatriz Watercolor & Stuff
+* Copyright 2019
+* Author: Paulo da Silva Pamplona (https://www.paulopamplona.com)
+* Version 1.0
+* Last Update: 11/29/2019
+*
+* SINGLE ART PAGE *
+*
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:700,900|Thasadith");
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+  display: table-cell;
+  vertical-align: middle; }
+  .loader:before {
+    content: '';
+    display: block;
+    padding-top: 100%; }
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 1s ease-in-out infinite;
+  stroke-linecap: round; }
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } }
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px; } }
+@keyframes color {
+  100%,
+  0% {
+    stroke: #EE483D; }
+  40% {
+    stroke: #1D99D8; }
+  66% {
+    stroke: #04CA77; }
+  80%,
+  90% {
+    stroke: #F4C342; } }
+.loader-wrapper {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0 auto;
+  display: table;
+  height: 100%; }
+
+html {
+  height: 100%; }
+  html body {
+    height: 100%;
+    overflow-x: hidden; }
+    html body::-webkit-scrollbar {
+      width: 0px; }
+    html body::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 1px transparent;
+      -moz-box-shadow: inset 0 0 1px transparent;
+      -ms-box-shadow: inset 0 0 1px transparent;
+      -o-box-shadow: inset 0 0 1px transparent;
+      box-shadow: inset 0 0 1px transparent; }
+    html body::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      outline: 1px solid transparent; }
+    html body .container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden; }
+      @media only screen and (min-width: 1024px) {
+        html body .container {
+          height: 100vh; } }
+      html body .container main {
+        position: relative;
+        float: left;
+        width: 100vw;
+        height: 100%;
+        max-width: unset;
+        top: 0;
+        padding: 0;
+        -webkit-box-shadow: 0 0 0 5px rgba(0, 255, 0, 0) inset;
+        -moz-box-shadow: 0 0 0 5px rgba(0, 255, 0, 0) inset;
+        -ms-box-shadow: 0 0 0 5px rgba(0, 255, 0, 0) inset;
+        -o-box-shadow: 0 0 0 5px rgba(0, 255, 0, 0) inset;
+        box-shadow: 0 0 0 5px rgba(0, 255, 0, 0) inset;
+        overflow: hidden; }
+        @media only screen and (min-width: 1024px) {
+          html body .container main {
+            height: 100vh; } }
+        html body .container main #overlay {
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background-color: black;
+          z-index: 900; }
+          @media only screen and (min-width: 1024px) {
+            html body .container main #overlay {
+              width: 100%;
+              height: 100%; } }
+        html body .container main article[id^="galleryItemContent"] {
+          position: fixed;
+          top: 0;
+          z-index: 901;
+          overflow: visible; }
+          html body .container main article[id^="galleryItemContent"] .comments-wrapper {
+            position: absolute;
+            background: white;
+            border-radius: 3px;
+            box-shadow: 2px 2px 1px lightslategrey;
+            border: 1px lightslategrey solid;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+            -o-transition: 0.5s all;
+            transition: 0.5s all;
+            top: 200vh; }
+            html body .container main article[id^="galleryItemContent"] .comments-wrapper.visible {
+              top: 50%;
+              -webkit-transform: translateY(-50%);
+              -moz-transform: translateY(-50%);
+              -ms-transform: translateY(-50%);
+              -o-transform: translateY(-50%);
+              transform: translateY(-50%); }
+            html body .container main article[id^="galleryItemContent"] .comments-wrapper .quitComment {
+              z-index: 999;
+              position: absolute;
+              outline: none;
+              cursor: pointer;
+              background: #ccc;
+              width: 50px;
+              height: 50px;
+              color: white;
+              border-radius: 50%;
+              top: 0;
+              left: 50%;
+              border-color: #ccc;
+              box-shadow: 2px 2px 13px black;
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              -webkit-transition: 0.2s all;
+              -moz-transition: 0.2s all;
+              -ms-transition: 0.2s all;
+              -o-transition: 0.2s all;
+              transition: 0.2s all; }
+              html body .container main article[id^="galleryItemContent"] .comments-wrapper .quitComment i.material-icons {
+                color: black;
+                font-size: 2.2rem;
+                margin-top: 2px; }
+              html body .container main article[id^="galleryItemContent"] .comments-wrapper .quitComment:hover {
+                -webkit-transform: translate(-50%, -50%) scale(1.2);
+                -moz-transform: translate(-50%, -50%) scale(1.2);
+                -ms-transform: translate(-50%, -50%) scale(1.2);
+                -o-transform: translate(-50%, -50%) scale(1.2);
+                transform: translate(-50%, -50%) scale(1.2); }
+          html body .container main article[id^="galleryItemContent"] .btns-wrapper {
+            position: fixed;
+            display: none;
+            opacity: 1;
+            z-index: 999;
+            top: 0; }
+            html body .container main article[id^="galleryItemContent"] .btns-wrapper button {
+              width: 66px;
+              height: 66px;
+              cursor: pointer;
+              position: absolute;
+              text-decoration: none;
+              z-index: 902;
+              outline: none;
+              background-color: rgba(0, 0, 0, 0.4);
+              border: 1px solid transparent;
+              -webkit-box-shadow: 0.5px 0.5px 9px 0.5px black;
+              -moz-box-shadow: 0.5px 0.5px 9px 0.5px black;
+              -ms-box-shadow: 0.5px 0.5px 9px 0.5px black;
+              -o-box-shadow: 0.5px 0.5px 9px 0.5px black;
+              box-shadow: 0.5px 0.5px 9px 0.5px black;
+              -webkit-transition: 0.2s;
+              -moz-transition: 0.2s;
+              -ms-transition: 0.2s;
+              -o-transition: 0.2s;
+              transition: 0.2s;
+              -webkit-transition-property: background-color, border, transform;
+              -moz-transition-property: background-color, border, transform;
+              -ms-transition-property: background-color, border, transform;
+              -o-transition-property: background-color, border, transform;
+              transition-property: background-color, border, transform; }
+              html body .container main article[id^="galleryItemContent"] .btns-wrapper button span {
+                position: absolute;
+                display: block;
+                content: "";
+                width: 60%;
+                height: 1.5px;
+                background: #ccc;
+                -webkit-transition: 0.2s;
+                -moz-transition: 0.2s;
+                -ms-transition: 0.2s;
+                -o-transition: 0.2s;
+                transition: 0.2s;
+                -webkit-transition-property: background;
+                -moz-transition-property: background;
+                -ms-transition-property: background;
+                -o-transition-property: background;
+                transition-property: background; }
+              html body .container main article[id^="galleryItemContent"] .btns-wrapper button.close {
+                border-radius: 0 0 0 50%; }
+                @media only screen and (min-width: 1024px) {
+                  html body .container main article[id^="galleryItemContent"] .btns-wrapper button.close {
+                    border-radius: 50%; } }
+                html body .container main article[id^="galleryItemContent"] .btns-wrapper button.close span {
+                  margin-left: 6px; }
+                  html body .container main article[id^="galleryItemContent"] .btns-wrapper button.close span:nth-child(1) {
+                    height: 2px;
+                    margin-top: -1px;
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                    transform: rotate(45deg); }
+                  html body .container main article[id^="galleryItemContent"] .btns-wrapper button.close span:nth-child(2) {
+                    top: 48%;
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    -o-transform: rotate(-45deg);
+                    transform: rotate(-45deg); }
+                @media only screen and (min-width: 1024px) {
+                  html body .container main article[id^="galleryItemContent"] .btns-wrapper button.close:hover {
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                    transform-origin: center; } }
+            html body .container main article[id^="galleryItemContent"] .btns-wrapper.visible {
+              display: block; }
+              html body .container main article[id^="galleryItemContent"] .btns-wrapper.visible button.close span {
+                -webkit-animation: blinpShadow 4s 0.3s 2;
+                -moz-animation: blinpShadow 4s 0.3s 2;
+                -ms-animation: blinpShadow 4s 0.3s 2;
+                -o-animation: blinpShadow 4s 0.3s 2;
+                animation: blinpShadow 4s 0.3s 2; }
+          html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer {
+            position: relative;
+            display: flex;
+            text-align: center;
+            transition: transform 0.6s; }
+            html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner {
+              position: relative; }
+              html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner figure {
+                width: 100%;
+                margin-bottom: 0; }
+                html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner figure img {
+                  height: unset;
+                  width: calc(100vw - 30px);
+                  margin-left: 0;
+                  opacity: 1;
+                  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                  -webkit-transition: 0.1s;
+                  -moz-transition: 0.1s;
+                  -ms-transition: 0.1s;
+                  -o-transition: 0.1s;
+                  transition: 0.1s; }
+                  html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner figure img.hidden {
+                    opacity: 0; }
+                    @media only screen and (min-width: 1024px) {
+                      html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner figure img.hidden {
+                        opacity: 1; } }
+                html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner figure figcaption {
+                  color: white;
+                  margin: 1.5em;
+                  margin-bottom: 0;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  padding-bottom: 1em;
+                  font-family: "Thasadith", sans-serif;
+                  text-transform: uppercase;
+                  text-align: center;
+                  display: none; }
+              html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner .fb_iframe_widget {
+                -webkit-transform: translateY(-150%);
+                -moz-transform: translateY(-150%);
+                -ms-transform: translateY(-150%);
+                -o-transform: translateY(-150%);
+                transform: translateY(-150%); }
+                html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner .fb_iframe_widget.ui.facebook.button i.material-icons {
+                  pointer-events: none; }
+                html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner .fb_iframe_widget.ui.facebook.button span {
+                  width: 100% !important;
+                  height: 100% !important;
+                  position: absolute;
+                  transform: translate(-25%, -25%); }
+                  html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner .fb_iframe_widget.ui.facebook.button span iframe {
+                    width: 100% !important;
+                    height: 100% !important;
+                    position: absolute;
+                    opacity: 0; }
+                    html body .container main article[id^="galleryItemContent"] .figure-wrapper-outer .figure-wrapper-inner .fb_iframe_widget.ui.facebook.button span iframe a._2vmz {
+                      position: absolute;
+                      height: 200px;
+                      width: 200px;
+                      top: 0;
+                      right: 0;
+                      z-index: 99999; }
+          html body .container main article[id^="galleryItemContent"] a.btn-swiper {
+            display: none;
+            text-decoration: none;
+            opacity: 0.5;
+            -webkit-transition: 0.2s opacity;
+            -moz-transition: 0.2s opacity;
+            -ms-transition: 0.2s opacity;
+            -o-transition: 0.2s opacity;
+            transition: 0.2s opacity;
+            pointer-events: none; }
+            html body .container main article[id^="galleryItemContent"] a.btn-swiper.visible {
+              display: block; }
+            @media only screen and (min-width: 1024px) {
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper {
+                pointer-events: auto; }
+                html body .container main article[id^="galleryItemContent"] a.btn-swiper:hover {
+                  opacity: 1; }
+                  html body .container main article[id^="galleryItemContent"] a.btn-swiper:hover span {
+                    box-shadow: inset 2px -2px 0px rgba(199, 234, 70, 0.8);
+                    border-color: rgba(4, 196, 125, 0.8); } }
+            html body .container main article[id^="galleryItemContent"] a.btn-swiper span {
+              position: fixed;
+              display: block;
+              width: 30px;
+              height: 30px;
+              z-index: 9999;
+              border-color: rgba(0, 0, 0, 0.9);
+              border-style: solid;
+              -webkit-transform: translateY(-50%) rotate(45deg);
+              -moz-transform: translateY(-50%) rotate(45deg);
+              -ms-transform: translateY(-50%) rotate(45deg);
+              -o-transform: translateY(-50%) rotate(45deg);
+              transform: translateY(-50%) rotate(45deg);
+              top: 50vh;
+              animation-name: artsNav;
+              animation-duration: 1.5s;
+              animation-timing-function: linear;
+              animation-iteration-count: 4;
+              opacity: 0; }
+              @media only screen and (min-width: 1024px) {
+                html body .container main article[id^="galleryItemContent"] a.btn-swiper span {
+                  opacity: 0.5;
+                  animation-iteration-count: infinite;
+                  border-color: rgba(0, 0, 0, 0.4); } }
+            html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span {
+              border-width: 0 0 2px 2px;
+              box-shadow: inset 2px -2px 0px rgba(255, 255, 255, 0.4); }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(1) {
+                left: 30px;
+                animation-delay: 0; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(2) {
+                left: 45px;
+                animation-delay: .15s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(3) {
+                left: 60px;
+                animation-delay: .3s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(4) {
+                left: 75px;
+                animation-delay: .45s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(5) {
+                left: 90px;
+                animation-delay: .6s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(6) {
+                left: 105px;
+                animation-delay: .75s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(7) {
+                left: 120px;
+                animation-delay: .9s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-prev span:nth-child(8) {
+                left: 135px;
+                animation-delay: 1.05s; }
+            html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span {
+              border-width: 2px 2px 0px 0;
+              box-shadow: inset -2px 2px 0px rgba(255, 255, 255, 0.4); }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(1) {
+                right: 30px;
+                animation-delay: 0; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(2) {
+                right: 45px;
+                animation-delay: .15s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(3) {
+                right: 60px;
+                animation-delay: .3s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(4) {
+                right: 75px;
+                animation-delay: .45s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(5) {
+                right: 90px;
+                animation-delay: .6s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(6) {
+                right: 105px;
+                animation-delay: .75s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(7) {
+                right: 120px;
+                animation-delay: .9s; }
+              html body .container main article[id^="galleryItemContent"] a.btn-swiper.btn-next span:nth-child(8) {
+                right: 135px;
+                animation-delay: 1.05s; }
+      html body .container button.fb-btn {
+        outline: none;
+        position: relative;
+        cursor: pointer;
+        color: white;
+        background: #4167B2;
+        font-size: 1.2rem;
+        font-weight: 500;
+        -webkit-box-shadow: 1px 1px 5px black;
+        -moz-box-shadow: 1px 1px 5px black;
+        -ms-box-shadow: 1px 1px 5px black;
+        -o-box-shadow: 1px 1px 5px black;
+        box-shadow: 1px 1px 5px black;
+        -webkit-transform: translate(0, -100%) scale(0.8);
+        -moz-transform: translate(0, -100%) scale(0.8);
+        -ms-transform: translate(0, -100%) scale(0.8);
+        -o-transform: translate(0, -100%) scale(0.8);
+        transform: translate(0, -100%) scale(0.8);
+        bottom: 0;
+        letter-spacing: 1.2px;
+        height: 60px;
+        width: 60px;
+        z-index: 999;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        transition: 0.5s all; }
+        @media only screen and (min-width: 1024px) {
+          html body .container button.fb-btn {
+            bottom: 0; } }
+        html body .container button.fb-btn i.material-icons {
+          font-size: 30px; }
+        html body .container button.fb-btn.share-btn {
+          left: 0;
+          opacity: 0;
+          float: left; }
+          html body .container button.fb-btn.share-btn.visible {
+            left: calc(50vw - 60px);
+            opacity: 1; }
+          @media only screen and (min-width: 1024px) {
+            html body .container button.fb-btn.share-btn:hover {
+              -webkit-transform: translate(0, -100%) scale(0.85);
+              -moz-transform: translate(0, -100%) scale(0.85);
+              -ms-transform: translate(0, -100%) scale(0.85);
+              -o-transform: translate(0, -100%) scale(0.85);
+              transform: translate(0, -100%) scale(0.85); } }
+        html body .container button.fb-btn.comment-btn {
+          right: 0;
+          opacity: 0;
+          float: right; }
+          html body .container button.fb-btn.comment-btn.visible {
+            right: calc(50vw - 60px);
+            opacity: 1; }
+          @media only screen and (min-width: 1024px) {
+            html body .container button.fb-btn.comment-btn:hover {
+              -webkit-transform: translate(0, -100%) scale(0.85);
+              -moz-transform: translate(0, -100%) scale(0.85);
+              -ms-transform: translate(0, -100%) scale(0.85);
+              -o-transform: translate(0, -100%) scale(0.85);
+              transform: translate(0, -100%) scale(0.85); } }
+          html body .container button.fb-btn.comment-btn.active {
+            background: black;
+            color: white; }
+        @media only screen and (min-width: 1024px) {
+          html body .container button.fb-btn:hover {
+            color: black;
+            background: white;
+            border-color: black; } }
+
+@-webkit-keyframes artsNav {
+  0% {
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-moz-keyframes artsNav {
+  0% {
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-ms-keyframes artsNav {
+  0% {
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes artsNav {
+  0% {
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-webkit-keyframes blinpShadow {
+  0%, 30%, 36%, 63%, 69%, 100% {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+  33%, 66% {
+    -webkit-box-shadow: 0px 0px 5px 5px white;
+    -moz-box-shadow: 0px 0px 5px 5px white;
+    -ms-box-shadow: 0px 0px 5px 5px white;
+    -o-box-shadow: 0px 0px 5px 5px white;
+    box-shadow: 0px 0px 5px 5px white; } }
+@-moz-keyframes blinpShadow {
+  0%, 30%, 36%, 63%, 69%, 100% {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+  33%, 66% {
+    -webkit-box-shadow: 0px 0px 5px 5px white;
+    -moz-box-shadow: 0px 0px 5px 5px white;
+    -ms-box-shadow: 0px 0px 5px 5px white;
+    -o-box-shadow: 0px 0px 5px 5px white;
+    box-shadow: 0px 0px 5px 5px white; } }
+@-ms-keyframes blinpShadow {
+  0%, 30%, 36%, 63%, 69%, 100% {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+  33%, 66% {
+    -webkit-box-shadow: 0px 0px 5px 5px white;
+    -moz-box-shadow: 0px 0px 5px 5px white;
+    -ms-box-shadow: 0px 0px 5px 5px white;
+    -o-box-shadow: 0px 0px 5px 5px white;
+    box-shadow: 0px 0px 5px 5px white; } }
+@keyframes blinpShadow {
+  0%, 30%, 36%, 63%, 69%, 100% {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+  33%, 66% {
+    -webkit-box-shadow: 0px 0px 5px 5px white;
+    -moz-box-shadow: 0px 0px 5px 5px white;
+    -ms-box-shadow: 0px 0px 5px 5px white;
+    -o-box-shadow: 0px 0px 5px 5px white;
+    box-shadow: 0px 0px 5px 5px white; } }
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-moz-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@-ms-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=art-page.css.map */
