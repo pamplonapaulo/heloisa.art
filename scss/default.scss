@@ -38,7 +38,6 @@
             header {
                 position: fixed;
                 height: $headerHeight;
-                width: calc(100% - 5px);
                 border-bottom: 1px rgba(0,0,0,0.1) solid;
                 background: $branco;
                 z-index: 99;
@@ -594,7 +593,6 @@
                     max-width: 1200px;
                     top: 0;
                     padding: 0;
-                    @include box-shadow(0 0 0 5px rgba(0,255,0,0) inset);
 
                     .gallery {
                         -webkit-margin-before: 0!important;
@@ -604,12 +602,12 @@
                         margin-block-start: 0;
                         margin-block-end: 0;
                         padding-inline-start: 0;
-                        padding: calc(80px + 1.2rem) 1.2rem 50px;
+                        padding: 70px 15px 50px;
                         text-align: center;
-                        width: calc(100% - 2.4rem);
+                        width: calc(100% - 30px);
                         max-width: 1200px;
                         @include column-count(2);
-                        @include column-gap(1.2rem);
+                        @include column-gap(12px);
                         
                         @include MQ(SS) {
                             @include column-count(3);
@@ -624,171 +622,59 @@
                         }
                         
                         .item {
-                            padding-bottom: 8px;
-                            // padding-top: 2px;
-                            margin-bottom: 20px;
-                            margin-top: -33px;
+                            
                             break-inside: avoid;
+                            margin-bottom: -38px;                          
+                            cursor: pointer;
 
-
-                            padding-bottom: 3px;
-                            margin-bottom: 0;
-                            margin-top: 0;
-
-
-                            .bug-test {
+                            h1 {
+                                position: relative;
                                 display: block;
-                                height: 100%;
-                                transform: translateY(100%);
                                 z-index: 9999;
-                                background: rgba(0,0,0,0.6);
-                                border-radius: 5px 5px 0 0;
+                                background: rgba(0,0,0,1);
                                 color: #fff;
                                 height: 25px;
-                                position: relative;
                                 line-height: 2;
                                 font-size: .8em;
                                 font-family: "Thasadith", sans-serif;
-                                @include transition(opacity 1s ease 0s);
+                                // @include transition(opacity 0.3s ease 0s);
                                 opacity: 0;
-                            }
 
-                            > div {
-                                width: 100%;
-                                height: 100%;
-                                // overflow-y: hidden;
-                                // overflow: hidden;
-                                //margin-bottom: 25px;
+                                &.art-name {
+                                    border-radius: 5px 5px 0 0;
+                                    transform: translateY(100%);
+                                }
 
-                                border-radius: 5px;
-                                @include box-shadow(1px 2px 2px rgba(0,0,0,0.3));
-
-                                &:hover {
-
-                                    // .item-overlay {
-                                    //     background: black;
-                                    //     opacity: .6;                                    
-                                    // }
-
-                                    // img {
-                                    //     @include transform(scale(1.2));
-                                    // }
+                                &.art-type {
+                                    border-radius: 0 0 5px 5px;
+                                    transform: translateY(-100%);
                                 }
                             }
 
-                            figure {
-                                -webkit-margin-before: 0!important;
-                                -webkit-margin-after: 0!important;
-                                -webkit-margin-start: 0!important;
-                                -webkit-margin-end: 0!important;
-                                margin-block-start: 0!important;
-                                margin-block-end: 0!important;
-                                margin-inline-start: 0!important;
-                                margin-inline-end: 0!important;
-                                display: block; 
+                            img {
                                 position: relative;
-                                cursor: pointer;
+                                width: 100%;
+                                display: block;
+                                vertical-align: top;
                                 border-radius: 5px;
-
-                                z-index: 999;
-                                overflow: -webkit-paged-x;
-                                
-                                .item-overlay {
-                                    position: absolute;
-                                    height: 100%;
-                                    width: 100%;
-                                    z-index: 2;
-                                    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
-                                    filter: alpha(opacity=0);
-                                    border-radius: 5px;
-                                    @include transition(all 0.3s ease-out);
-                                    @include box-shadow(inset 0 0 50px #ccc);
-                                }  
-
-                                img {
-                                    position: relative;
-                                    width: 100%;
-                                    display: block;
-                                    vertical-align: top;
-                                    border-radius: 5px;
-                                    @include transition(all 0.3s ease 0s);
-                                }
-
-                                figcaption {
-                                    position: absolute;
-                                    width: 100%;
-                                    z-index: 2;
-                                    padding: 6.5% 0;
-                                    color: white;
-                                    text-align: center;
-                                    text-transform: uppercase;
-                                    font-size: 15px;
-                                    font-family: $font-1;
-
-                                    &:focus {
-                                        outline: none;
-                                    }            
-                                    
-                                    opacity: 1;
-                                    font-weight: 100;
-                                    font-size: .8em;
-                                    background: rgba(0,0,0,0.4);
-                                    text-shadow: 0 0 5px $color-black;
-
-                                    display: none;
-
-                                    // &:nth-of-type(1) {
-                                    //     @include transform(translateY(-105%));
-                                    //     @include transition(transform .2s);
-                                    // }
-
-                                    // &:nth-of-type(2) {
-                                    //     bottom: 0;
-                                    //     @include transform(translateY(105%));
-                                    //     @include transition(transform .2s);
-                                    // }
-                                }   
+                                @include transform(scale(1));
+                                // @include transition(all 0.3s ease 0s);
                             }
 
                             &:hover {
 
                                 @include MQ(L) {
 
-                                    .bug-test {
+                                    h1 {
                                         opacity: 1;
-
                                     }
 
-                                    figure {
-
-                                        // img {
-                                        //     @include transform(scale(1.2));
-                                        // }
-
-                                        // figcaption {
-
-                                        //     // &:nth-of-type(1) {
-                                        //     //     @include transform(translateY(0));
-                                        //     // }
-        
-                                        //     // &:nth-of-type(2) {
-                                        //     //     @include transform(translateY(0));
-                                        //     // }
-        
-                                        // }
-    
+                                    img {
+                                        @include transform(scale(0.95));
+                                        box-shadow: 0 9px 0 0 #fff, 0 -9px 0 0 #fff, 5px 0 0 0 #000, -5px 0 0 0 #000;
                                     }
                                 }
                             }
-
-                            &:nth-of-type(2) {
-                                margin-top: 0;
-                            }
-                            
-                            // &::after {
-                            //     content: "";
-                            //     margin-bottom: 2rem;
-                            // }
                         }
 
                         #overlay {

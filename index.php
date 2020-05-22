@@ -58,19 +58,12 @@ include('includes/head-default.php');
 
             echo "<div class=\"item\" data-link=\"./arts.php?item=" . $registro->id . "&title={$urlTitle}\">
                 
-                <h1 class=\"bug-test\">{$artTitle}</h1>
+                <h1 class=\"art-name\">{$artTitle}</h1>
 
-                <div>
+                    <img src=\"assets/obras/thumb/" . $registro->thumb_name . "\" alt=\"{$artTitle}\" data-index=\"" . $registro->id . "\">
 
-                    <figure>
+                <h1 class=\"art-type\">{$artSubtitle}</h1>
 
-                        <img src=\"assets/obras/thumb/" . $registro->thumb_name . "\" alt=\"{$artTitle}\" data-index=\"" . $registro->id . "\">
-
-                        <figcaption>{$artSubtitle}</figcaption>
-
-                    </figure>
-
-                </div>
             </div>";
         }
     }
