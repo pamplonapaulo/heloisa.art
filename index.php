@@ -57,13 +57,12 @@ include('includes/head-default.php');
             $urlTitle = tailorMadeSanitize($registro->title_en);
 
             echo "<div class=\"item\" data-link=\"./arts.php?item=" . $registro->id . "&title={$urlTitle}\">
+                
+                <h1 class=\"bug-test\">{$artTitle}</h1>
+
                 <div>
 
                     <figure>
-
-                        <div class=\"item-overlay\"></div>
-
-                        <figcaption>{$artTitle}</figcaption>
 
                         <img src=\"assets/obras/thumb/" . $registro->thumb_name . "\" alt=\"{$artTitle}\" data-index=\"" . $registro->id . "\">
 
